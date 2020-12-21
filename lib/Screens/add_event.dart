@@ -1,9 +1,11 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:disability/custom_widgets/custom_button.dart';
 import 'package:disability/mixins/validation_mixin.dart';
 import 'package:disability/models/event.dart';
 import 'package:disability/services/db_service.dart';
-import 'package:disability/database/database_helper.dart';
+import 'package:disability/utils/database_helper.dart';
+import 'package:image_picker/image_picker.dart';
 
 class AddEvent extends StatefulWidget {
   final EventModel event;
@@ -25,6 +27,8 @@ class _AddEventState extends State<AddEvent> with ValidationMixin {
   String header = "Add New Task";
   String buttonText = "Save";
   bool addNewTask = true;
+  File _image;
+  final picker = ImagePicker();
 
   @override
   void initState() {
@@ -50,6 +54,18 @@ class _AddEventState extends State<AddEvent> with ValidationMixin {
     buttonText = "Update";
     addNewTask = false;
     setState(() {});
+  }
+
+  Future _getImage() async {
+    final pickedFile = await picker.getImage(source: ImageSource.gallery);
+
+    setState(() {
+      if (pickedFile != null) {
+        _image = File(pickedFile.path);
+      } else {
+        print('No image selected.');
+      }
+    });
   }
 
   void saveTask() async {
@@ -140,7 +156,6 @@ class _AddEventState extends State<AddEvent> with ValidationMixin {
                           padding: EdgeInsets.symmetric(
                               horizontal: 16.0, vertical: 8.0),
                           child: TextFormField(
-                            
                             controller: _title,
                             validator: validateTextInput,
                             decoration: InputDecoration(
@@ -198,6 +213,16 @@ class _AddEventState extends State<AddEvent> with ValidationMixin {
                               });
                             }
                           },
+                        ),
+                        RaisedButton(
+                          onPressed: _getImage,
+                          child: Text('Take Picture',
+                              style: TextStyle(fontSize: 20)),
+                        ),
+                        Center(
+                          child: _image == null
+                              ? Text('No image selected.')
+                              : Image.file(_image),
                         ),
                         SizedBox(height: 10.0),
                         processing

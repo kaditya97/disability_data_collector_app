@@ -38,20 +38,20 @@ class DatabaseHelper {
       await lock.synchronized(() async {
         if (_db == null) {
           var databasesPath = await getDatabasesPath();
-          var path = join(databasesPath, "appDB.db");
+          var path = join(databasesPath, "task.db");
           print("DB's path : $path");
           var file = new File(path);
-
           // check if file exists
           if (!await file.exists()) {
             // Copy from asset
-            ByteData data = await rootBundle.load(join("assets", "disability.db"));
+            ByteData data = await rootBundle.load(join("databases", "task.db"));
             List<int> bytes =
                 data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
             await new File(path).writeAsBytes(bytes);
           }
           // open the database
           _db = await openDatabase(path);
+          print(_db);
         }
       });
     }
