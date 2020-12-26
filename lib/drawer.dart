@@ -53,6 +53,7 @@ class CustomDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Color _fillColor = Theme.of(context).brightness == Brightness.dark ? Colors.white70 : Colors.blue;
     return Drawer(
       child: ListView(
         children: <Widget>[
@@ -63,14 +64,14 @@ class CustomDrawer extends StatelessWidget {
               style: TextStyle(
                 fontSize: 36,
                 fontWeight: FontWeight.bold,
-                color: Colors.blue,
+                color: _fillColor,
               ),
             )),
           ),
           ListTile(
             leading: Icon(
               Icons.home,
-              color: Colors.blue,
+              color: _fillColor,
             ),
             title: Text(
               "home".tr(),
@@ -87,7 +88,7 @@ class CustomDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(
               Icons.storage,
-              color: Colors.blue,
+              color: _fillColor,
             ),
             title: Text(
               "database".tr(),
@@ -104,7 +105,7 @@ class CustomDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(
               Icons.map,
-              color: Colors.blue,
+              color: _fillColor,
             ),
             title: Text(
               "map".tr(),
@@ -119,7 +120,7 @@ class CustomDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.clear_all, color: Colors.blue),
+            leading: Icon(Icons.clear_all, color: _fillColor),
             title: Text(
               "about".tr(),
               style: TextStyle(
@@ -132,7 +133,7 @@ class CustomDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.settings, color: Colors.blue),
+            leading: Icon(Icons.settings, color: _fillColor),
             title: Text(
               "setting".tr(),
               style: TextStyle(
@@ -146,7 +147,7 @@ class CustomDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.email, color: Colors.blue),
+            leading: Icon(Icons.email, color: _fillColor),
             title: Text(
               "feedback".tr(),
               style: TextStyle(
@@ -156,7 +157,7 @@ class CustomDrawer extends StatelessWidget {
             ),
             onTap: () => _launchEmail(
                 'mailto:cssgs@wrc.edu.np?subject=Disability%20app%20feedback&body=Suggestion'),
-            trailing: Icon(Icons.open_in_new, color: Colors.blue),
+            trailing: Icon(Icons.open_in_new, color: _fillColor),
           ),
         ],
       ),

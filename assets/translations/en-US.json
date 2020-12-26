@@ -9,6 +9,8 @@
     "language": "Language",
     "close": "Close",
     "selectLanguage": "Select Language",
+    "selectTheme": "Select Theme",
+    "addData": "Add Data",
     "generalInformation" : "General Information",
     "personName": "Name of disable Person",
     "birthDate": "Birth Date",

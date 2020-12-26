@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong/latlong.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:geolocator/geolocator.dart';
 
 class Mymap extends StatefulWidget {
   @override
@@ -8,6 +10,12 @@ class Mymap extends StatefulWidget {
 }
 
 class _MymapState extends State<Mymap> {
+  void _getLocation() async {
+    Position position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high);
+    print(position);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,8 +48,8 @@ class _MymapState extends State<Mymap> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        tooltip: 'Add Data',
+        onPressed: _getLocation,
+        tooltip: 'addData'.tr(),
         child: Icon(Icons.center_focus_strong),
       ),
     );

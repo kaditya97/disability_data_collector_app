@@ -98,9 +98,10 @@ class _AddDataState extends State<AddData> {
 
   @override
   Widget build(BuildContext context) {
+    Color _fillColor = Theme.of(context).brightness == Brightness.dark ? Theme.of(context).primaryColor : Colors.white;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Add Data"),
+        title: Text("addData".tr()),
       ),
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(),
@@ -123,6 +124,8 @@ class _AddDataState extends State<AddData> {
                     ),
                     FormBuilderImagePicker(
                       name: "image",
+                      maxImages: 1,
+                      iconColor: Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.blue,
                     ),
                     SizedBox(
                       height: 10,
@@ -132,7 +135,7 @@ class _AddDataState extends State<AddData> {
                       decoration: InputDecoration(
                           labelText: "personName".tr(),
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor: _fillColor,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10))),
                     ),
@@ -144,7 +147,7 @@ class _AddDataState extends State<AddData> {
                       decoration: InputDecoration(
                           labelText: "birthDate".tr(),
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor: _fillColor,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10))),
                     ),
@@ -154,7 +157,7 @@ class _AddDataState extends State<AddData> {
                       decoration: InputDecoration(
                           labelText: "gender".tr(),
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor: _fillColor,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10))),
                       // initialValue: 'Male',
@@ -177,7 +180,7 @@ class _AddDataState extends State<AddData> {
                       decoration: InputDecoration(
                           labelText: "currentAddress".tr(),
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor: _fillColor,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10))),
                     ),
@@ -189,7 +192,7 @@ class _AddDataState extends State<AddData> {
                       decoration: InputDecoration(
                           labelText: "parmanentAddress".tr(),
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor: _fillColor,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10))),
                     ),
@@ -201,7 +204,7 @@ class _AddDataState extends State<AddData> {
                       decoration: InputDecoration(
                           labelText: "careTaker".tr(),
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor: _fillColor,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10))),
                     ),
@@ -213,7 +216,7 @@ class _AddDataState extends State<AddData> {
                       decoration: InputDecoration(
                           labelText: "formSpeaker".tr(),
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor: _fillColor,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10))),
                     ),
@@ -225,7 +228,7 @@ class _AddDataState extends State<AddData> {
                       decoration: InputDecoration(
                           labelText: "formSpeakerRelation".tr(),
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor: _fillColor,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10))),
                     ),
@@ -238,7 +241,7 @@ class _AddDataState extends State<AddData> {
                       decoration: InputDecoration(
                           labelText: "phoneNumber".tr(),
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor: _fillColor,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10))),
                     ),
@@ -246,7 +249,7 @@ class _AddDataState extends State<AddData> {
                       padding:
                           EdgeInsets.symmetric(horizontal: 32, vertical: 10),
                       child: Text(
-                        'disableInformation',
+                        'disableInformation'.tr(),
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
@@ -260,7 +263,7 @@ class _AddDataState extends State<AddData> {
                       decoration: InputDecoration(
                           labelText: "disableType".tr(),
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor: _fillColor,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10))),
                     ),
@@ -272,7 +275,7 @@ class _AddDataState extends State<AddData> {
                       decoration: InputDecoration(
                           labelText: "disableReason".tr(),
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor: _fillColor,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10))),
                       // initialValue: 'Male',
@@ -294,7 +297,7 @@ class _AddDataState extends State<AddData> {
                       decoration: InputDecoration(
                           labelText: "disableStartAge".tr(),
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor: _fillColor,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10))),
                     ),
@@ -316,7 +319,7 @@ class _AddDataState extends State<AddData> {
                             decoration: InputDecoration(
                                 labelText: "disableIdentityCardType".tr(),
                                 filled: true,
-                                fillColor: Colors.white,
+                                fillColor: _fillColor,
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10))),
                             // initialValue: 'Male',
@@ -338,7 +341,7 @@ class _AddDataState extends State<AddData> {
                       decoration: InputDecoration(
                           labelText: "maritalStatus".tr(),
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor: _fillColor,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10))),
                       // initialValue: 'Male',
@@ -360,7 +363,7 @@ class _AddDataState extends State<AddData> {
                       decoration: InputDecoration(
                           labelText: "educationStatus".tr(),
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor: _fillColor,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10))),
                       // initialValue: 'Male',
@@ -385,7 +388,7 @@ class _AddDataState extends State<AddData> {
                             decoration: InputDecoration(
                                 labelText: "schoolType".tr(),
                                 filled: true,
-                                fillColor: Colors.white,
+                                fillColor: _fillColor,
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10))),
                             // initialValue: 'Male',
@@ -407,7 +410,7 @@ class _AddDataState extends State<AddData> {
                       decoration: InputDecoration(
                           labelText: "occupationStatus".tr(),
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor: _fillColor,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10))),
                       // initialValue: 'Male',
@@ -430,7 +433,7 @@ class _AddDataState extends State<AddData> {
                       decoration: InputDecoration(
                           labelText: "disableIncome".tr(),
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor: _fillColor,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10))),
                     ),
@@ -442,7 +445,7 @@ class _AddDataState extends State<AddData> {
                       decoration: InputDecoration(
                           labelText: "Estimated disable Family Monthly Income",
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor: _fillColor,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10))),
                     ),
@@ -591,7 +594,7 @@ class _AddDataState extends State<AddData> {
                       decoration: InputDecoration(
                           labelText: "familyAndSocietyBehavior".tr(),
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor: _fillColor,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10))),
                       allowClear: true,
@@ -612,7 +615,7 @@ class _AddDataState extends State<AddData> {
                       decoration: InputDecoration(
                           labelText: "friendsBehavior".tr(),
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor: _fillColor,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10))),
                       allowClear: true,
@@ -634,7 +637,7 @@ class _AddDataState extends State<AddData> {
                           labelText:
                               "familyAndSocialActivity".tr(),
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor: _fillColor,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10))),
                       allowClear: true,
@@ -654,6 +657,7 @@ class _AddDataState extends State<AddData> {
                         name: 'voteInElection',
                         initialValue: false,
                         title: Text("voteInElection".tr())),
+                    SizedBox(height: 10,),
                     Container(
                       padding:
                           EdgeInsets.symmetric(horizontal: 32, vertical: 10),
@@ -688,7 +692,7 @@ class _AddDataState extends State<AddData> {
                           labelText:
                               "providedMedicineDetail".tr(),
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor: _fillColor,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10))),
                     ),
@@ -708,11 +712,12 @@ class _AddDataState extends State<AddData> {
                         initialValue: false,
                         title: Text(
                             "usedAccessories".tr())),
+                    SizedBox(height: 10,),
                     Container(
                       padding:
                           EdgeInsets.symmetric(horizontal: 32, vertical: 10),
                       child: Text(
-                        'incomeAndLivelihood',
+                        'incomeAndLivelihood'.tr(),
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
@@ -732,7 +737,7 @@ class _AddDataState extends State<AddData> {
                       decoration: InputDecoration(
                           labelText: "vocationTrainingDuration".tr(),
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor: _fillColor,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10))),
                     ),
@@ -752,7 +757,7 @@ class _AddDataState extends State<AddData> {
                       decoration: InputDecoration(
                           labelText: "whichVocationalTraining".tr(),
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor: _fillColor,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10))),
                     ),
@@ -765,7 +770,7 @@ class _AddDataState extends State<AddData> {
                           labelText:
                               "currentBusiness".tr(),
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor: _fillColor,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10))),
                       // initialValue: 'Male',
@@ -795,7 +800,7 @@ class _AddDataState extends State<AddData> {
                       decoration: InputDecoration(
                           labelText: "businessSupportDetail".tr(),
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor: _fillColor,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10))),
                     ),
@@ -885,7 +890,7 @@ class _AddDataState extends State<AddData> {
                             color: Theme.of(context).accentColor,
                             child: Text(
                               "Submit",
-                              style: TextStyle(color: Colors.white),
+                              style: TextStyle(color: _fillColor),
                             ),
                             onPressed: () {
                               _formKey.currentState.save();
@@ -903,7 +908,7 @@ class _AddDataState extends State<AddData> {
                             color: Theme.of(context).accentColor,
                             child: Text(
                               "Reset",
-                              style: TextStyle(color: Colors.white),
+                              style: TextStyle(color: _fillColor),
                             ),
                             onPressed: () {
                               _formKey.currentState.reset();

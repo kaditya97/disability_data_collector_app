@@ -6,6 +6,7 @@ import 'package:disability/services/db_service.dart';
 import 'package:disability/utils/database_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:dynamic_theme/dynamic_theme.dart';
 
 void main() {
   runApp(
@@ -21,17 +22,23 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: context.locale,
-      title: 'Disability',
-      theme: ThemeData(
+    return new DynamicTheme(
+      defaultBrightness: Brightness.light,
+      data: (brightness) => new ThemeData(
         primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+        brightness: brightness,
       ),
-      debugShowCheckedModeBanner: false,
-      home: MyHomePage(title: 'Disability'),
+      themedWidgetBuilder: (context, theme) {
+        return MaterialApp(
+          localizationsDelegates: context.localizationDelegates,
+          supportedLocales: context.supportedLocales,
+          locale: context.locale,
+          title: 'Disability',
+          theme: theme,
+          debugShowCheckedModeBanner: false,
+          home: MyHomePage(title: 'Disability'),
+        );
+      },
     );
   }
 }
