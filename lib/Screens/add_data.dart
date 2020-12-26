@@ -11,32 +11,32 @@ class _AddDataState extends State<AddData> {
   final _formKey = GlobalKey<FormBuilderState>();
   bool showIdentityCardType = false;
   bool showSchoolType = false;
-  List genderOptions = ["male", "female", "other"];
+  List genderOptions = ["male".tr(), "female".tr(), "other".tr()];
   List _disableType = [
-    "Autism",
-    "Hemophilia",
-    "Complete Blindness",
-    "Blindness",
-    "Low Vision",
-    "Deaf",
-    "Dull hearing",
-    "Hearing Impaired",
-    "Intellectual disability",
-    "Psychosocial Disability",
-    "Multiple Disabilites",
-    "Cerebral Palsy",
-    "Spinal Cord Paralysis",
-    "Amputated or Small Hand or Leg ",
-    "Polio",
-    "Muscular dystrophy",
-    "Leprosy Affected",
-    "other"
+    "Autism".tr(),
+    "Hemophilia".tr(),
+    "Complete Blindness".tr(),
+    "Blindness".tr(),
+    "Low Vision".tr(),
+    "Deaf".tr(),
+    "Dull hearing".tr(),
+    "Hearing Impaired".tr(),
+    "Intellectual disability".tr(),
+    "Psychosocial Disability".tr(),
+    "Multiple Disabilites".tr(),
+    "Cerebral Palsy".tr(),
+    "Spinal Cord Paralysis".tr(),
+    "Amputated or Small Hand or Leg".tr(),
+    "Polio".tr(),
+    "Muscular dystrophy".tr(),
+    "Leprosy Affected".tr(),
+    "other".tr()
   ];
   List _disableReason = [
-    "From Birth",
-    "After Being Sick",
-    "Accident",
-    "Other"
+    "From Birth".tr(),
+    "After Being Sick".tr(),
+    "Accident".tr(),
+    "other".tr()
   ];
   void _identityCard(bool ctx) {
     if (ctx == true) {
@@ -51,7 +51,7 @@ class _AddDataState extends State<AddData> {
   }
 
   void _education(ctx) {
-    if (ctx == "Uneducated") {
+    if (ctx == "Uneducated".tr()) {
       setState(() {
         showSchoolType = false;
       });
@@ -62,38 +62,38 @@ class _AddDataState extends State<AddData> {
     }
   }
 
-  List _disableIdentityCardType = ["Red", "Blue", "yellow", "White"];
+  List _disableIdentityCardType = ["Red".tr(), "Blue".tr(), "yellow".tr(), "White".tr()];
 
-  List _maritalStatus = ["Married", "Unmarried", "Divorced", "Other"];
+  List _maritalStatus = ["Married".tr(), "Unmarried".tr(), "Divorced".tr(), "other".tr()];
   List _educationStatus = [
-    "Uneducated",
-    "educated",
-    "Primary Education",
-    "Secondary Education",
-    "Higher Secondary Education",
-    "Higher Education"
+    "Uneducated".tr(),
+    "educated".tr(),
+    "Primary Education".tr(),
+    "Secondary Education".tr(),
+    "Higher Secondary Education".tr(),
+    "Higher Education".tr()
   ];
-  List _schoolType = ["General School", "Special School", "College", "Other"];
+  List _schoolType = ["General School".tr(), "Special School".tr(), "College".tr(), "other".tr()];
   List _occupation = [
-    "Government Job",
-    "Private Job",
-    "Self Employed",
-    "Daily Labour",
-    "Agriculture",
-    "Unemployed",
-    "Other"
+    "Government Job".tr(),
+    "Private Job".tr(),
+    "Self Employed".tr(),
+    "Daily Labour".tr(),
+    "Agriculture".tr(),
+    "Unemployed".tr(),
+    "other".tr()
   ];
-  List _socialBehavior = ["Very Good", "Good", "Ok", "Not Good"];
-  List _socialActivity = ["Often Found", "Sometimes", "Not Found"];
+  List _socialBehavior = ["Very Good".tr(), "Good".tr(), "Ok".tr(), "Not Good".tr()];
+  List _socialActivity = ["Often Found".tr(), "Sometimes".tr(), "Not Found".tr()];
   List _currentBusiness = [
-    "Poultry farming",
-    "Goat Rearing",
-    "Bangur Rearing",
-    "Vegetable Farming",
-    "Grocery Store",
-    "Home and Small Business",
-    "Job",
-    "Other"
+    "Poultry farming".tr(),
+    "Goat Rearing".tr(),
+    "Bangur Rearing".tr(),
+    "Vegetable Farming".tr(),
+    "Grocery Store".tr(),
+    "Home and Small Business".tr(),
+    "Job".tr(),
+    "other".tr()
   ];
 
   @override
@@ -260,6 +260,7 @@ class _AddDataState extends State<AddData> {
                     FormBuilderSearchableDropdown(
                       name: "disableType",
                       items: _disableType,
+                      hint: "disableType".tr(),
                       decoration: InputDecoration(
                           labelText: "disableType".tr(),
                           filled: true,
@@ -883,13 +884,62 @@ class _AddDataState extends State<AddData> {
                         initialValue: false,
                         title: Text(
                             "disableRightsAndLaw".tr())),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    FormBuilderCheckbox(
+                        name: 'nepalGovernmentServices',
+                        initialValue: false,
+                        title: Text(
+                            "nepalGovernmentServices".tr())),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    FormBuilderCheckbox(
+                        name: 'complain',
+                        initialValue: false,
+                        title: Text(
+                            "complain".tr())),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    FormBuilderCheckbox(
+                        name: 'partOfDisableGroup',
+                        initialValue: false,
+                        title: Text(
+                            "partOfDisableGroup".tr())),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    FormBuilderCheckbox(
+                        name: 'takenTraining',
+                        initialValue: false,
+                        title: Text(
+                            "takenTraining".tr())),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    FormBuilderCheckbox(
+                        name: 'memberOfGroup',
+                        initialValue: false,
+                        title: Text(
+                            "memberOfGroup".tr())),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    FormBuilderCheckbox(
+                        name: 'leadershipPosition',
+                        initialValue: false,
+                        title: Text(
+                            "leadershipPosition".tr())),
+                    SizedBox(height: 10,),
                     Row(
                       children: <Widget>[
                         Expanded(
                           child: MaterialButton(
                             color: Theme.of(context).accentColor,
                             child: Text(
-                              "Submit",
+                              "submit".tr(),
                               style: TextStyle(color: _fillColor),
                             ),
                             onPressed: () {
@@ -907,7 +957,7 @@ class _AddDataState extends State<AddData> {
                           child: MaterialButton(
                             color: Theme.of(context).accentColor,
                             child: Text(
-                              "Reset",
+                              "reset".tr(),
                               style: TextStyle(color: _fillColor),
                             ),
                             onPressed: () {

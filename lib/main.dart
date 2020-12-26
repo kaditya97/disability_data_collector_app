@@ -54,14 +54,13 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   Icon _searchIcon = new Icon(Icons.search);
-  Widget _appBarTitle = Text("title".tr());
+  Widget _appBarTitle = Text("Disability(अपाङता)");
   TextEditingController _eventController;
   Map<DateTime, List<dynamic>> _events;
   List<dynamic> _selectedEvents;
   DbService dbService;
   DatabaseHelper databaseHelper;
   bool valueFromAddEvent = false;
-  Color _todoColor = Colors.teal[300];
 
   Widget _buildBar(BuildContext context) {
     return new AppBar(
@@ -111,6 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    Color _todoColor = Theme.of(context).brightness == Brightness.dark ? Theme.of(context).primaryColor : Colors.teal[300];
     return Scaffold(
       appBar: _buildBar(context),
       drawer: CustomDrawer(),

@@ -39,11 +39,17 @@ dependencies:
   flutter_form_builder: ^4.1.0
   easy_localization: any
   geolocator: any
+  moor: ^3.4.0
+  sqlite3_flutter_libs:
+  path_provider:
+  path:
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  moor_generator: any
+  build_runner:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
