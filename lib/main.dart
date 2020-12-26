@@ -1,19 +1,31 @@
-import 'package:disability/Screens/add_event.dart';
+import 'package:disability/Screens/add_data.dart';
+// import 'package:disability/Screens/add_event.dart';
 import 'package:disability/drawer.dart';
 import 'package:disability/models/event.dart';
 import 'package:disability/services/db_service.dart';
 import 'package:disability/utils/database_helper.dart';
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    EasyLocalization(
+        supportedLocales: [Locale('en', 'US'), Locale('ne', 'NP')],
+        path: 'assets/translations',
+        fallbackLocale: Locale('en', 'US'),
+        saveLocale: true,
+        child: MyApp()),
+  );
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
+      title: 'Disability',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -35,7 +47,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   Icon _searchIcon = new Icon(Icons.search);
-  Widget _appBarTitle = new Text('Disability');
+  Widget _appBarTitle = Text("title".tr());
   TextEditingController _eventController;
   Map<DateTime, List<dynamic>> _events;
   List<dynamic> _selectedEvents;
@@ -84,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
     await Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => AddEvent(),
+          builder: (context) => AddData(),
         ));
 
     setState(() {});
@@ -113,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Container(
                     padding: EdgeInsets.symmetric(horizontal: 32),
                     child: Text(
-                      'Daily Tasks',
+                      'title'.tr(),
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     )),
