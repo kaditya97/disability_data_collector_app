@@ -1,14 +1,17 @@
-import 'package:disability/base/database.dart';
+import 'package:disability/databasebase/database.dart';
 import 'package:disability/main.dart';
 import 'package:disability/settings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:moor_db_viewer/moor_db_viewer.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:easy_localization/easy_localization.dart';
 
+// import 'databasebase/database.dart';
 import 'map/map.dart';
 
 class CustomDrawer extends StatelessWidget {
+  final db = MyDatabase();
   Future<void> _launch(String url) async {
     if (await canLaunch(url)) {
       await launch(
@@ -98,8 +101,7 @@ class CustomDrawer extends StatelessWidget {
               ),
             ),
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Mydatabase()));
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => MoorDbViewer(db)));
             },
           ),
           ListTile(

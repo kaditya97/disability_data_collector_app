@@ -417,6 +417,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.11"
+  flutter_slidable:
+    dependency: "direct main"
+    description:
+      name: flutter_slidable
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.5.7"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -505,7 +512,7 @@ packages:
     source: hosted
     version: "2.1.19"
   image_picker:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: image_picker
       url: "https://pub.dartlang.org"
@@ -609,6 +616,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.4.0"
+  moor_db_viewer:
+    dependency: "direct main"
+    description:
+      name: moor_db_viewer
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.3"
+  moor_flutter:
+    dependency: transitive
+    description:
+      name: moor_flutter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.1.0"
   moor_generator:
     dependency: "direct dev"
     description:
@@ -616,6 +637,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.4.0"
+  nested:
+    dependency: transitive
+    description:
+      name: nested
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.4"
   node_interop:
     dependency: transitive
     description:
@@ -777,6 +805,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.0"
+  provider:
+    dependency: "direct main"
+    description:
+      name: provider
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.3.2+3"
   pub_semver:
     dependency: transitive
     description:
