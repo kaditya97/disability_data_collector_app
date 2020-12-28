@@ -4,6 +4,7 @@ import 'package:disability/settings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:moor_db_viewer/moor_db_viewer.dart';
+import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:easy_localization/easy_localization.dart';
 
@@ -11,17 +12,16 @@ import 'package:easy_localization/easy_localization.dart';
 import 'map/map.dart';
 
 class CustomDrawer extends StatelessWidget {
-  final db = MyDatabase();
-  Future<void> _launch(String url) async {
-    if (await canLaunch(url)) {
-      await launch(
-        url,
-        forceSafariVC: false,
-        forceWebView: false,
-        headers: <String, String>{'my_header_key': 'my_header_value'},
-      );
-    }
-  }
+  // Future<void> _launch(String url) async {
+  //   if (await canLaunch(url)) {
+  //     await launch(
+  //       url,
+  //       forceSafariVC: false,
+  //       forceWebView: false,
+  //       headers: <String, String>{'my_header_key': 'my_header_value'},
+  //     );
+  //   }
+  // }
 
   Future<void> _launchEmail(String url) async {
     if (await canLaunch(url)) {
@@ -56,6 +56,7 @@ class CustomDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final db = Provider.of<MyDatabase>(context);
     Color _fillColor = Theme.of(context).brightness == Brightness.dark ? Colors.white70 : Colors.blue;
     return Drawer(
       child: ListView(

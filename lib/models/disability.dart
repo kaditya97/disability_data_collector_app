@@ -1,0 +1,85 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'disability.g.dart';
+
+@JsonSerializable()
+class Disability {
+    Disability();
+
+    String district;
+    String muncipality;
+    num wardNo;
+    String surveyDate;
+    String personName;
+    String birthDate;
+    String gender;
+    String currentAddress;
+    String parmanentAddress;
+    String careTaker;
+    String formSpeaker;
+    String formSpeakerRelation;
+    String phoneNumber;
+    String disableType;
+    String disableReason;
+    num disableStartAge;
+    bool hasdisableIdentityCard;
+    String disableIdentityCardType;
+    String maritalStatus;
+    String educationStatus;
+    String schoolType;
+    String occupationStatus;
+    num disableIncome;
+    num disableFamilyIncome;
+    bool nationalIdentityCard;
+    bool awareNationalIdentityCard;
+    bool birthCertificate;
+    bool awareBirthCertificate;
+    bool marriageCertificate;
+    bool awareMarriageCertificate;
+    bool voterIdCard;
+    bool awareVoterIdCard;
+    bool disableIdCard;
+    bool awaredisableIdCard;
+    bool socialSecurityAllowance;
+    bool awareSocialSecurityAllowance;
+    bool bankAccount;
+    bool awareBankAccount;
+    bool healthInsurance;
+    bool awareHealthInsurance;
+    bool landWealth;
+    String familyAndSocietyBehavior;
+    String friendsBehavior;
+    String familyAndSocialActivity;
+    bool voteInElection;
+    bool usingMedicine;
+    bool providedMedicine;
+    bool providedMedicineDetail;
+    bool freeService;
+    bool usedAccessories;
+    bool vocationalTraining;
+    String vocationTrainingDuration;
+    bool wishVocationalTraining;
+    String whichVocationalTraining;
+    String currentBusiness;
+    bool businessSupport;
+    String businessSupportDetail;
+    bool schoolFees;
+    bool schoolScholarship;
+    bool schoolTransport;
+    bool schoolAccessability;
+    bool schoolClubParticipation;
+    bool schoolExtracurricularActivities;
+    bool disableRightsAndLaw;
+    bool nepalGovernmentServices;
+    bool complain;
+    bool partOfDisableGroup;
+    bool takenTraining;
+    bool memberOfGroup;
+    bool leadershipPosition;
+    String lat;
+    String lng;
+    String surveyorName;
+    
+    factory Disability.fromJson(Map<String,dynamic> json) => _$DisabilityFromJson(json);
+    Map<String, dynamic> toJson() => _$DisabilityToJson(this);
+}

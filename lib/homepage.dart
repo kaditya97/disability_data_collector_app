@@ -1,5 +1,6 @@
+import 'dart:convert';
+
 import 'package:disability/databasebase/database.dart';
-import 'package:disability/new_task.dart';
 import 'package:flutter/material.dart';
 import 'package:disability/Screens/add_data.dart';
 import 'package:disability/drawer.dart';
@@ -55,16 +56,15 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Column(
         children: <Widget>[
           Expanded(child: _buildTaskList(context)),
-          NewTaskInput(),
         ],
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {
-      //     _awaitReturnValueFromAddEvent();
-      //   },
-      //   tooltip: 'Add Data',
-      //   child: Icon(Icons.add),
-      // ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          _awaitReturnValueFromAddEvent();
+        },
+        tooltip: 'Add Data',
+        child: Icon(Icons.add),
+      ),
     );
   }
 
@@ -87,6 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget _buildListItem(Task itemTask, MyDatabase database) {
+    final img = base64Decode(itemTask.img);
     return Slidable(
       actionPane: SlidableDrawerActionPane(),
       secondaryActions: <Widget>[
@@ -97,14 +98,19 @@ class _MyHomePageState extends State<MyHomePage> {
           onTap: () => database.deleteTask(itemTask),
         )
       ],
-      child: CheckboxListTile(
-        title: Text(itemTask.name),
-        subtitle: Text(itemTask.dueDate?.toString() ?? 'No date'),
-        value: itemTask.completed,
-        onChanged: (newValue) {
-          database.updateTask(itemTask.copyWith(completed: newValue));
-        },
+      child: ListTile(
+        leading: Image.memory(img),
+            title: Text(itemTask.personName),
+            subtitle: Text(itemTask.surveyDate),
       ),
+      // child: CheckboxListTile(
+      //   title: Text(itemTask.personName),
+      //   subtitle: Text(itemTask.surveyDate?.toString() ?? 'No date'),
+      //   value: itemTask.nationalIdentityCard,
+      //   onChanged: (newValue) {
+      //     database.updateTask(itemTask.copyWith(nationalIdentityCard: newValue));
+      //   },
+      // ),
     );
   }
 }
